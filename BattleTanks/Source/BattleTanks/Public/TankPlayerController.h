@@ -18,6 +18,8 @@ class BATTLETANKS_API ATankPlayerController : public APlayerController
 private:
 
 	ATank* GetControlledTank() const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector & HitLocation) const;
 	
 	virtual void BeginPlay() override;
 
@@ -34,4 +36,7 @@ private:
 
 	UPROPERTY(EditAnywhere)
 		float CrosshairYLocation = 0.33333;
+
+	UPROPERTY(EditAnywhere)
+		float LineTraceRange = 1000000;
 };
